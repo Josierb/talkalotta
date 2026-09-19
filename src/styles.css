@@ -333,3 +333,51 @@ body {
 .removerow__t { font-size: 13px; color: var(--muted); }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* ------------------------------------------------- add sheet (new items) */
+.seg { display: flex; gap: 6px; background: #E7E7DF; border-radius: 10px; padding: 4px; }
+.seg__opt {
+  flex: 1; border: none; background: transparent; border-radius: 7px;
+  padding: 10px; font: inherit; font-weight: 700; font-size: 14px;
+  color: var(--muted); cursor: pointer;
+}
+.seg__opt.is-on { background: #fff; color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+
+.kinds { display: flex; flex-wrap: wrap; gap: 7px; }
+.kind {
+  border: 3px solid transparent; border-radius: 9px; padding: 9px 13px;
+  font: inherit; font-weight: 700; font-size: 13px; cursor: pointer;
+}
+.kind.is-on { border-color: var(--ink); }
+
+/* --------------------------------------------------- message bar additions */
+.speechbar__count {
+  align-self: center;
+  font: 700 12px/1 system-ui, sans-serif;
+  color: var(--muted);
+  padding: 0 4px;
+  font-variant-numeric: tabular-nums;
+}
+.speechbar__count.is-full { color: var(--danger); }
+
+/* ------------------------------------------------------- folder affordance */
+.cell--folder {
+  border-width: 3px;
+  border-color: rgba(12,14,18,.34);
+  padding-top: 9px;
+}
+.cell--folder::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 6px;
+  width: 42%; height: 7px;
+  background: rgba(12,14,18,.22);
+  border-radius: 0 0 4px 4px;
+}
+.cell--folder::after {
+  content: "\203A";
+  position: absolute;
+  right: 5px; bottom: 2px;
+  font-size: 15px; font-weight: 700; line-height: 1;
+  opacity: .5;
+}
